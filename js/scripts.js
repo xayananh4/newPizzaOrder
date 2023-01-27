@@ -31,21 +31,29 @@ Pizza.prototype.calculateCost = function (selectedPizzaName) {
 };
 
 // UI Logic
-function getPizza() {
+function handlePizzaSubmission() {
+  
   let selectedPizzaName = document.querySelector('#pizzaOptions').value;
   const selectedSize = document.querySelector("input[name='q01']:checked").value;
   const selectedToppings = document.querySelector("input[name='q02']:checked").value;
+  
+  let newPizza = new Pizza(selectedPizzaName, selectedSize, selectedToppings);
+  const totalPrice = newPizza.calculateCost(selectedPizzaName);
+  
+  document.getElementById("delivery-output").innerHTML = selectedSize + " " + selectedPizzaName +
+    " With " + selectedToppings + " Extra Toppings: $ " + totalPrice;
 
+}
 
-
-
+// UI Logic
+function handlePizzaSubmission() {
+  let selectedPizzaName = document.querySelector('#pizzaOptions').value;
+  const selectedSize = document.querySelector("input[name='q01']:checked").value;
+  const selectedToppings = document.querySelector("input[name='q02']:checked").value;
   let newPizza = new Pizza(selectedPizzaName, selectedSize, selectedToppings);
   const totalPrice = newPizza.calculateCost(selectedPizzaName);
   document.getElementById("output").innerHTML = selectedSize + " " + selectedPizzaName +
     " With " + selectedToppings + " Extra Toppings: $ " + totalPrice;
-
-
-
 }
 
 window.addEventListener("load", function () {
@@ -56,13 +64,15 @@ window.addEventListener("load", function () {
     element.addEventListener("change", function (event) {
       let selectedOption = event.target.value;
       if (selectedOption === "_Delivery") {
-        deliveryOption.removeAttribute("class");
+        // deliveryOption.removeAttribute("class");
+        handlePizzaSubmission();
       }
     });
   });
 
   form.addEventListener("submit", function (event) {
-    getPizza();
+    handleDeliverySubmission();
+    handlePizzaSubmission();
     event.preventDefault();
   });
 
