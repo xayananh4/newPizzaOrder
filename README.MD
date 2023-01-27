@@ -1,6 +1,6 @@
 # Pizza Parlor
 Names of contributors: Viradeth Xay-ananh.  
-Web application for Pizza Parlor where user can choose a pizza select its size and toppings.
+Web application for Viradeth Pizza Parlor where customer can choose a pizza select its size and add toppings.
 
 ## Technologies Used
 * HTML
