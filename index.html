@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pizza Order</title>
+    <link href="./css/styles.css" rel="stylesheet" type="text/css">
   <script src="./js/scripts.js"></script>
 </head>
 
@@ -50,8 +51,8 @@
       <input type="radio" name="q02" value="No" id="No">
       No Extra
     </label>
-  
-  <hr>
+
+    <hr>
     <label>
       <input type="radio" name="q03" value="Store-PickUp" id="Store-PickUp">
       Store Pick Up
@@ -62,11 +63,34 @@
     </label>
 
 
+  <div class="defaultSettingHidden">
+      <div>
+        <br>
+        <label for="name">Name</label>
+        <input required type="text" id="name" name="name" autocomplete="name" enterkeyhint="next">
+      </div>
+      <div>
+        <label for="street-address">Street Address</label>
+        <input type="text" id="street-address" name="street-address" autocomplete="street-address" required enterkeyhint="next"> 
+      </div>
+
+      <div>
+        <label for="city">City</label>
+        <input required type="text" id="city" name="city" autocomplete="address-level2" enterkeyhint="next">
+      </div>
+      <div>
+        <label for="postal-code">Zip Code</label>
+        <input class="postal-code" id="postal-code" name="postal-code" autocomplete="postal-code" enterkeyhint="next">
+      </div>
+  </div>
+
+
 
 
 
     <br>
-    <button type="submit">Purchase</button>
+    <br>
+    <button type="submit">Submit Order</button>
 
 
 

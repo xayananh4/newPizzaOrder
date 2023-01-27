@@ -27,10 +27,15 @@ function getPizza() {
   const selectedSize = document.querySelector("input[name='q01']:checked").value;
   const selectedToppings = document.querySelector("input[name='q02']:checked").value;
 
+  
+  
+  
   let newPizza = new Pizza(selectedPizzaName, selectedSize, selectedToppings);
   const totalPrice = newPizza.calculateCost(selectedPizzaName);
   document.getElementById("output").innerHTML = selectedSize + " " + selectedPizzaName +
     " With " + selectedToppings + " Extra Toppings: $ " + totalPrice;
+
+
 
 }
 
