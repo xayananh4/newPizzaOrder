@@ -23,8 +23,8 @@ Expected Output: Pizza {name: 'supreme', toppings: Array(3), size: 'large'}
 
 Describe: calculateCost()
 
-Test: "Returns cost of a pizza" 
-Code: calculateCost(myPizza)
+Test: "Returns cost of a pizza"  
+Code: calculateCost(myPizza)  
 Expected Output: 9.99
 
 # Known bugs: 
