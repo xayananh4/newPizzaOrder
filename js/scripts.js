@@ -5,6 +5,13 @@ function Pizza(pizzaName, pizzaToppings, pizzaSize) {
   this.size = pizzaSize;
 }
 
+function Address(addressOwnerName, addressStreet, addressCity, addressZipCode) {
+  this.name = addressOwnerName;
+  this.street = addressStreet;
+  this.city =  addressCity;
+  this.zipCode =  addressZipCode;
+}
+
 Pizza.prototype.calculateCost = function (selectedPizzaName) {
   let totalPrice = 0;
 
