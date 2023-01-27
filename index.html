@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Order</title>
-    <script src="./js/scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Order</title>
+  <script src="./js/scripts.js"></script>
 </head>
+
 <body>
+
+  
+  <form id="pizzaform">
+
+
+    <p>Please Select Kind of Pizza :
+      <select id="select1">
+          <option value="supreme">Supreme</option>
+          <option value="meatlovers">Meat Lovers</option>
+          <option value="hawaiian">Hawaiian</option>
+      </select>
+  </p>
     
+ 
+    
+  <p>Please Select a Toppings : </p>
+    <label>
+      <input type="radio" name="q01" value="veryBad" id="bad">
+      Very Bad
+    </label>
+
+    <br>
+    <label>
+      <input type="radio" name="q01" value="neutral" id="neutral">
+      OK
+    </label>
+
+    <label>
+      <input type="radio" name="q01" value="great" id="great">
+      Great
+    </label>
+
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+
+  </form>
+  <h2>Results</h2>
+  <p id="output"></p>
+
 </body>
+
 </html>
