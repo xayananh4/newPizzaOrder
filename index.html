@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,67 +7,51 @@
   <title>Pizza Order</title>
   <script src="./js/scripts.js"></script>
 </head>
-
 <body>
-
-  
   <form id="pizzaform">
-
-
     <p>Select Kind of Pizza :
       <select id="pizzaOptions">
-          <option value="MemphisBBQChicken">Memphis BBQ Chicken</option>
-          <option value="FieryHawaiian">Fiery Hawaiian</option>
-          <option value="PhillyCheeseSteak">Philly Cheese Steak</option>
+        <option value="Memphis-BBQ-Chicken">Memphis BBQ Chicken</option>
+        <option value="Fiery-Hawaiian">Fiery Hawaiian</option>
+        <option value="Philly-Cheese-Steak">Philly Cheese Steak</option>
       </select>
-  </p>
-  
-      <p>Please Select Size : </p>
+    </p>
+
+    <p>Please Select Size : </p>
     <label>
       <input type="radio" name="q01" value="Small" id="Small">
       Small
     </label>
-
     <br>
     <label>
       <input type="radio" name="q01" value="Medium" id="Medium">
       Medium
     </label>
-    
     <br>
     <label>
       <input type="radio" name="q01" value="Large" id="Large">
-    Large
+      Large
     </label>
-
-      <p>Please Select Additional Toppings : </p>
+    <p>Please Select Additional Toppings : </p>
     <label>
-      <input type="radio" name="q02" value="pepperoni" id="pepperoni">
+      <input type="radio" name="q02" value="Pepperoni" id="Pepperoni">
       Pepperoni
     </label>
-
     <br>
     <label>
-      <input type="radio" name="q02" value="sausage" id="sausage">
+      <input type="radio" name="q02" value="Sausage" id="Sausage">
       Sausage
     </label>
-    
+
     <br>
     <label>
-      <input type="radio" name="q02" value="none" id="none">
-      None
+      <input type="radio" name="q02" value="No" id="No">
+      No Extra
     </label>
-
-    
-    
-    
     <br>
     <button type="submit">Purchase</button>
 
   </form>
-  <h2>Cost: </h2>
   <p id="output"></p>
-
 </body>
-
 </html>
