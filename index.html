@@ -54,18 +54,19 @@
 
     <hr>
     <label>
-      <input type="radio" name="q03" value="Store-PickUp" id="Store-PickUp">
+      <input type="radio" name="q03" value="Store-PickUp" id="Store-PickUp" checked>
       Store Pick Up
     </label>
     <label>
-      <input type="radio" name="q03" value="Delivery" id="Delivery">
+      <input type="radio" name="q03" value="_Delivery" id="Delivery">
       Delivery
     </label>
 
 
-  <div class="defaultSettingHidden">
+  <div id="deliveryOption" class="defaultSettingHidden">
       <div>
         <br>
+        <p>Please Fill Out Address Form  : </p>
         <label for="name">Name</label>
         <input required type="text" id="name" name="name" autocomplete="name" enterkeyhint="next">
       </div>
@@ -85,20 +86,11 @@
   </div>
 
 
-
-
-
     <br>
     <br>
     <button type="submit">Submit Order</button>
 
-
-
-
   </form>
-
-
-
 
 
   <p id="output"></p>

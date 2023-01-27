@@ -1,16 +1,18 @@
 //BUSINESS LOGIC
+function Address(addressOwnerName, addressStreet, addressCity, addressZipCode) {
+  this.name = addressOwnerName;
+  this.street = addressStreet;
+  this.city = addressCity;
+  this.zipCode = addressZipCode;
+}
+
 function Pizza(pizzaName, pizzaToppings, pizzaSize) {
   this.name = pizzaName;
   this.toppings = pizzaToppings;
   this.size = pizzaSize;
 }
 
-function Address(addressOwnerName, addressStreet, addressCity, addressZipCode) {
-  this.name = addressOwnerName;
-  this.street = addressStreet;
-  this.city =  addressCity;
-  this.zipCode =  addressZipCode;
-}
+
 
 Pizza.prototype.calculateCost = function (selectedPizzaName) {
   let totalPrice = 0;
@@ -34,9 +36,9 @@ function getPizza() {
   const selectedSize = document.querySelector("input[name='q01']:checked").value;
   const selectedToppings = document.querySelector("input[name='q02']:checked").value;
 
-  
-  
-  
+
+
+
   let newPizza = new Pizza(selectedPizzaName, selectedSize, selectedToppings);
   const totalPrice = newPizza.calculateCost(selectedPizzaName);
   document.getElementById("output").innerHTML = selectedSize + " " + selectedPizzaName +
@@ -48,9 +50,24 @@ function getPizza() {
 
 window.addEventListener("load", function () {
   let form = document.querySelector("form");
+  let deliveryOption = document.querySelector("div#deliveryOption");
+
+  document.querySelectorAll('input[name="q03"]').forEach((element) => {
+    element.addEventListener("change", function (event) {
+      let selectedOption = event.target.value;
+      if (selectedOption === "_Delivery") {
+        deliveryOption.removeAttribute("class");
+      }
+    });
+  });
 
   form.addEventListener("submit", function (event) {
     getPizza();
     event.preventDefault();
   });
+
 });
+
+
+
+
