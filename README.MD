@@ -27,6 +27,13 @@ Test: "Returns cost of a pizza"
 Code: calculateCost(myPizza)  
 Expected Output: 9.99
 
+Describe: Address()
+
+Test: "Returns a address object with name street, city and zip code"  
+Code: const cusAddress = new Address("jon doe","123th st ne", "portland", "98056");  
+Expected Output: Address {name: 'jon doe', street: '123th st ne', city: 'portland', zipCode: '98056'}
+
+
 # Known bugs: 
 No bugs 
 ## License
