@@ -1,3 +1,8 @@
 .defaultSettingHidden {
   display: none;
 }
+
+#welcome-text{
+  font-style: italic;
+  font-size: xx-large;
+}

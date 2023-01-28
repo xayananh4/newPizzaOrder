@@ -13,7 +13,7 @@ function Pizza(pizzaName, pizzaToppings, pizzaSize) {
 }
 
 
-
+//BUSINESS LOGIC
 Pizza.prototype.calculateCost = function (selectedPizzaName) {
   let totalPrice = 0;
 
@@ -30,45 +30,71 @@ Pizza.prototype.calculateCost = function (selectedPizzaName) {
   return totalPrice;
 };
 
+
+
 // UI Logic
-function handleDeliverySubmission() {
-   
-  // Selecting the input element and get its value 
-  let name = document.getElementById("addressName").value;
-  let street = document.getElementById("street-address").value;
-  let city = document.getElementById("city").value;
-  let zipCode = document.getElementById("postal-code").value;
+function displayDeliverySubmission(divElement) {
+  document.querySelectorAll('input[name="q03"]').forEach((element) => {
+    element.addEventListener("change", function (event) {
+
+      let option = event.target.value;
+      if (option === "_Delivery") {
+        divElement.removeAttribute("class");
+      }
+      else{
+        divElement.setAttribute("class","defaultSettingHidden")
+      }
+    });
+  });
   
-  document.getElementById("delivery-output").innerHTML = "Will be delivered to: " + name + "At: " 
-  + street + " " + city + " " + zipCode;
-
-
+  // let name = document.getElementById("addressName").value;
+  // let street = document.getElementById("street-address").value;
+  // let city = document.getElementById("city").value;
+  // let zipCode = document.getElementById("postal-code").value;
+  // document.getElementById("delivery-output").innerHTML = "Will be delivered to: " + name + "At: " 
+  // + street + " " + city + " " + zipCode;
 }
+
 // UI Logic
 function handlePizzaSubmission() { 
   let selectedPizzaName = document.querySelector('#pizzaOptions').value;
   const selectedSize = document.querySelector("input[name='q01']:checked").value;
   const selectedToppings = document.querySelector("input[name='q02']:checked").value;
+  let name = document.getElementById("addressName").value;
+  let street = document.getElementById("street-address").value;
+  let city = document.getElementById("city").value;
+  let zipCode = document.getElementById("postal-code").value;
   let newPizza = new Pizza(selectedPizzaName, selectedSize, selectedToppings);
-  const totalPrice = newPizza.calculateCost(selectedPizzaName);
+  let newAddress = new Address(name, street, city, zipCode);
+  const totalPrice = newPizza.calculateCost(selectedPizzaName); 
   
-  document.getElementById("output").innerHTML = selectedSize + " " + selectedPizzaName 
-  + " With " + selectedToppings + " Extra Toppings: $ " + totalPrice;
+  document.getElementById("output").innerHTML = "Thank You! " + newAddress.name  +
+  " your " + selectedSize + " " +  selectedPizzaName + " with " + selectedToppings  
+  + " is headed to: " + street + " " + city + " " + zipCode + " NOW!";
+
 }
 
 window.addEventListener("load", function () {
-  let form = document.querySelector("form");
-  let formForDelivery = document.querySelector("deliveryForm");
-
-
-  formForDelivery.
+  let form = document.querySelector("form#deliveryForm");
+  let pizzaMenu = document.querySelector("div#pizzaMenu");
+  let purchaseBtn = document.querySelector("button#purchase");
+  let submitAddressBtn = document.querySelector("button#addressBtn");
+  let divElement = document.querySelector("div#deliveryOption");
+  displayDeliverySubmission(divElement);
   
   form.addEventListener("submit", function (event) {
-    handlePizzaSubmission();
+    
+    submitAddressBtn.setAttribute("class","defaultSettingHidden");
+    divElement.setAttribute("class","defaultSettingHidden");
+    pizzaMenu.removeAttribute("class");
+    purchaseBtn.removeAttribute("class")
     event.preventDefault();
+  
   });
 
-
+  purchaseBtn.addEventListener("click", function () {
+    handlePizzaSubmission();
+});
 
 });
 
