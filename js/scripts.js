@@ -12,7 +12,6 @@ function Pizza(pizzaName, pizzaToppings, pizzaSize) {
   this.size = pizzaSize;
 }
 
-//BUSINESS LOGIC
 Pizza.prototype.calculateCost = function (selectedPizzaName) {
   let totalPrice = 0;
 
@@ -33,7 +32,6 @@ Pizza.prototype.calculateCost = function (selectedPizzaName) {
 function displayDeliverySubmission(divElement) {
   document.querySelectorAll('input[name="q03"]').forEach((element) => {
     element.addEventListener("change", function (event) {
-
       let option = event.target.value;
       if (option === "_Delivery") {
         divElement.removeAttribute("class");
@@ -77,13 +75,11 @@ window.addEventListener("load", function () {
     deliveryOption.setAttribute("class","defaultSettingHidden");
     pizzaMenu.removeAttribute("class");
     purchaseBtn.removeAttribute("class")
-    event.preventDefault();
-  
+    event.preventDefault(); 
   });
 
   purchaseBtn.addEventListener("click", function () {
-    handlePizzaSubmission();
-    
+    handlePizzaSubmission();   
     });
 });
 
