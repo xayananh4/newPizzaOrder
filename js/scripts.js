@@ -12,7 +12,6 @@ function Pizza(pizzaName, pizzaToppings, pizzaSize) {
   this.size = pizzaSize;
 }
 
-
 //BUSINESS LOGIC
 Pizza.prototype.calculateCost = function (selectedPizzaName) {
   let totalPrice = 0;
@@ -30,8 +29,6 @@ Pizza.prototype.calculateCost = function (selectedPizzaName) {
   return totalPrice;
 };
 
-
-
 // UI Logic
 function displayDeliverySubmission(divElement) {
   document.querySelectorAll('input[name="q03"]').forEach((element) => {
@@ -46,13 +43,6 @@ function displayDeliverySubmission(divElement) {
       }
     });
   });
-  
-  // let name = document.getElementById("addressName").value;
-  // let street = document.getElementById("street-address").value;
-  // let city = document.getElementById("city").value;
-  // let zipCode = document.getElementById("postal-code").value;
-  // document.getElementById("delivery-output").innerHTML = "Will be delivered to: " + name + "At: " 
-  // + street + " " + city + " " + zipCode;
 }
 
 // UI Logic
@@ -69,9 +59,8 @@ function handlePizzaSubmission() {
   const totalPrice = newPizza.calculateCost(selectedPizzaName); 
   
   document.getElementById("output").innerHTML = "Thank You! " + newAddress.name  +
-  " your " + selectedSize + " " +  selectedPizzaName + " with " + selectedToppings  
-  + " is headed to: " + street + " " + city + " " + zipCode + " NOW!";
-
+  " your total for " + selectedSize + " " +  selectedPizzaName + " with " + selectedToppings + " will be " +
+  "$" + totalPrice  + ". It is headed to: " + street + " " + city + " " + zipCode + " NOW!";
 }
 
 window.addEventListener("load", function () {
@@ -79,13 +68,13 @@ window.addEventListener("load", function () {
   let pizzaMenu = document.querySelector("div#pizzaMenu");
   let purchaseBtn = document.querySelector("button#purchase");
   let submitAddressBtn = document.querySelector("button#addressBtn");
-  let divElement = document.querySelector("div#deliveryOption");
-  displayDeliverySubmission(divElement);
+  let deliveryOption = document.querySelector("div#deliveryOption");
   
-  form.addEventListener("submit", function (event) {
-    
+  displayDeliverySubmission(deliveryOption);
+  
+  form.addEventListener("submit", function (event) {    
     submitAddressBtn.setAttribute("class","defaultSettingHidden");
-    divElement.setAttribute("class","defaultSettingHidden");
+    deliveryOption.setAttribute("class","defaultSettingHidden");
     pizzaMenu.removeAttribute("class");
     purchaseBtn.removeAttribute("class")
     event.preventDefault();
@@ -94,8 +83,8 @@ window.addEventListener("load", function () {
 
   purchaseBtn.addEventListener("click", function () {
     handlePizzaSubmission();
-});
-
+    
+    });
 });
 
 

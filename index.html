@@ -14,18 +14,20 @@
   <p id="welcome-text">Welcome To Viradeth Pizza Parlor :</p>
 
   <!------- FORM FOR DELIVERY OPTION ------------------------------------------------>
-
   <form id="deliveryForm">
     <p>Will This Be For: </p>
-    <label>
-      <input type="radio" name="q03" value="_Delivery" id="Delivery">
-      Delivery
-    </label>
-    <p>OR </p>
-    <label>
-      <input type="radio" name="q03" value="_Store-PickUp" id="Store-PickUp" checked>
-      Store Pick Up
-    </label>
+
+    <div id="radioDeliveryOption">
+      <label>
+        <input type="radio" name="q03" value="_Delivery" id="Delivery">
+        Delivery
+      </label>
+      <p>OR </p>
+      <label>
+        <input type="radio" name="q03" value="_Store-PickUp" id="Store-PickUp" checked>
+        Store Pick Up
+      </label>
+    </div>
 
     <div id="deliveryOption" class="defaultSettingHidden">
       <div>
@@ -50,74 +52,50 @@
     <br>
     <br>
     <button id="addressBtn" type="submit">Submit Address</button>
-  
-  <!------------- div container for pizza order  ------------------------------------------------>
-    
+    <!------------- div container for pizza order section  ------------------------------------------------>
     <div id="pizzaMenu" class="defaultSettingHidden">
-    
-    <p>Please Choose a Pizza Option :</p>
-    <select id="pizzaOptions">
-      <option value="Memphis-BBQ-Chicken">Memphis BBQ Chicken</option>
-      <option value="Fiery-Hawaiian">Fiery Hawaiian</option>
-      <option value="Philly-Cheese-Steak">Philly Cheese Steak</option>
-    </select>
 
-    <p>Please Select Size : </p>
-    <label>
-      <input type="radio" name="q01" value="Small" id="Small">
-      Small
-    </label>
-    <br>
-    <label>
-      <input type="radio" name="q01" value="Medium" id="Medium">
-      Medium
-    </label>
-    <br>
-    <label>
-      <input type="radio" name="q01" value="Large" id="Large">
-      Large
-    </label>
-    <p>Please Select Additional Toppings : </p>
-    <label>
-      <input type="radio" name="q02" value="Pepperoni" id="Pepperoni">
-      Pepperoni
-    </label>
-    <br>
-    <label>
-      <input type="radio" name="q02" value="Sausage" id="Sausage">
-      Sausage
-    </label>
+      <p>Please Choose a Pizza Option :</p>
+      <select id="pizzaOptions">
+        <option value="Memphis-BBQ-Chicken">Memphis BBQ Chicken</option>
+        <option value="Fiery-Hawaiian">Fiery Hawaiian</option>
+        <option value="Philly-Cheese-Steak">Philly Cheese Steak</option>
+      </select>
 
-    <br>
-    <label>
-      <input type="radio" name="q02" value="No" id="No">
-      No Extra
-    </label>
-  
-  </div>
-  
-<!------- div container for pizza order  --------------------------------------------------------->
-  <button type="button" class="defaultSettingHidden" id="purchase">Purchase Order</button>
+      <p>Please Select Size : </p>
+      <label>
+        <input type="radio" name="q01" value="Small" id="Small">
+        Small
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="q01" value="Medium" id="Medium">
+        Medium
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="q01" value="Large" id="Large">
+        Large
+      </label>
+      <p>Please Select Additional Toppings : </p>
+      <label>
+        <input type="radio" name="q02" value="Pepperoni" id="Pepperoni">
+        Pepperoni
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="q02" value="Sausage" id="Sausage">
+        Sausage
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="q02" value="No" id="No">
+        No Extra
+      </label>
+    </div>
+    <button type="button" class="defaultSettingHidden" id="purchase">Purchase Order</button>
   </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <p id="output"></p>
-  <div id="delivery-output"></div>
-
-
 </body>
 
 </html>
