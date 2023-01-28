@@ -12,7 +12,7 @@ Web application for Viradeth Pizza Parlor where customer can choose a pizza sele
 # Complete setup/Installation instructions:
 Clone repository to desktop   
 Navigate to portfolio folder, open index.html  
-[Viradeth Pizza Parlor]()  
+[Viradeth Pizza Parlor](https://xayananh4.github.io/newPizzaOrder/)  
 
 # TEST: 
 Describe: Pizza()
