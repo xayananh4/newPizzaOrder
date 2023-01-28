@@ -61,37 +61,42 @@
       <input type="radio" name="q03" value="_Delivery" id="Delivery">
       Delivery
     </label>
-
-
-  <div id="deliveryOption" class="defaultSettingHidden">
-      <div>
-        <br>
-        <p>Please Fill Out Address Form  : </p>
-        <label for="name">Name</label>
-        <input required type="text" id="name" name="name" autocomplete="name" enterkeyhint="next">
-      </div>
-      <div>
-        <label for="street-address">Street Address</label>
-        <input type="text" id="street-address" name="street-address" autocomplete="street-address" required enterkeyhint="next"> 
-      </div>
-
-      <div>
-        <label for="city">City</label>
-        <input required type="text" id="city" name="city" autocomplete="address-level2" enterkeyhint="next">
-      </div>
-      <div>
-        <label for="postal-code">Zip Code</label>
-        <input class="postal-code" id="postal-code" name="postal-code" autocomplete="postal-code" enterkeyhint="next">
-      </div>
-  </div>
+ 
     <br>
     <button type="submit">Submit Order</button>
 
   </form>
 
+<p id="output"></p>
 
-  <p id="output"></p>
-  <p id="delivery-output"></p>
+<form id="deliveryForm">
+   <div id="deliveryOption" class="defaultSettingHidden">
+     <div>
+       <br>
+       <p>Please Fill Out Address Form  : </p>
+       <label for="name">Name</label>
+       <input required type="text" id="addressName" name="name" autocomplete="name" enterkeyhint="next">
+     </div>
+     <div>
+       <label for="street-address">Street Address</label>
+       <input type="text" id="street-address" name="street-address" autocomplete="street-address" required enterkeyhint="next">
+     </div>
+
+
+     <div>
+       <label for="city">City</label>
+       <input required type="text" id="city" name="city" autocomplete="address-level2" enterkeyhint="next">
+     </div>
+     <div>
+       <label for="postal-code">Zip Code</label>
+       <input class="postal-code" id="postal-code" name="postal-code" autocomplete="postal-code" enterkeyhint="next">
+     </div>
+ </div>
+</form>
+
+<div id="delivery-output"></div>
+  
+  
 </body>
 
 </html>

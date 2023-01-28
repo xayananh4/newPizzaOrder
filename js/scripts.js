@@ -31,50 +31,44 @@ Pizza.prototype.calculateCost = function (selectedPizzaName) {
 };
 
 // UI Logic
-function handlePizzaSubmission() {
+function handleDeliverySubmission() {
+   
+  // Selecting the input element and get its value 
+  let name = document.getElementById("addressName").value;
+  let street = document.getElementById("street-address").value;
+  let city = document.getElementById("city").value;
+  let zipCode = document.getElementById("postal-code").value;
   
-  let selectedPizzaName = document.querySelector('#pizzaOptions').value;
-  const selectedSize = document.querySelector("input[name='q01']:checked").value;
-  const selectedToppings = document.querySelector("input[name='q02']:checked").value;
-  
-  let newPizza = new Pizza(selectedPizzaName, selectedSize, selectedToppings);
-  const totalPrice = newPizza.calculateCost(selectedPizzaName);
-  
-  document.getElementById("delivery-output").innerHTML = selectedSize + " " + selectedPizzaName +
-    " With " + selectedToppings + " Extra Toppings: $ " + totalPrice;
+  document.getElementById("delivery-output").innerHTML = "Will be delivered to: " + name + "At: " 
+  + street + " " + city + " " + zipCode;
+
 
 }
-
 // UI Logic
-function handlePizzaSubmission() {
+function handlePizzaSubmission() { 
   let selectedPizzaName = document.querySelector('#pizzaOptions').value;
   const selectedSize = document.querySelector("input[name='q01']:checked").value;
   const selectedToppings = document.querySelector("input[name='q02']:checked").value;
   let newPizza = new Pizza(selectedPizzaName, selectedSize, selectedToppings);
   const totalPrice = newPizza.calculateCost(selectedPizzaName);
-  document.getElementById("output").innerHTML = selectedSize + " " + selectedPizzaName +
-    " With " + selectedToppings + " Extra Toppings: $ " + totalPrice;
+  
+  document.getElementById("output").innerHTML = selectedSize + " " + selectedPizzaName 
+  + " With " + selectedToppings + " Extra Toppings: $ " + totalPrice;
 }
 
 window.addEventListener("load", function () {
   let form = document.querySelector("form");
-  let deliveryOption = document.querySelector("div#deliveryOption");
+  let formForDelivery = document.querySelector("deliveryForm");
 
-  document.querySelectorAll('input[name="q03"]').forEach((element) => {
-    element.addEventListener("change", function (event) {
-      let selectedOption = event.target.value;
-      if (selectedOption === "_Delivery") {
-        // deliveryOption.removeAttribute("class");
-        handlePizzaSubmission();
-      }
-    });
-  });
 
+  formForDelivery.
+  
   form.addEventListener("submit", function (event) {
-    handleDeliverySubmission();
     handlePizzaSubmission();
     event.preventDefault();
   });
+
+
 
 });
 
